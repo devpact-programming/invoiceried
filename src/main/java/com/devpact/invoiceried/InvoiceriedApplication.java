@@ -1,23 +1,15 @@
 package com.devpact.invoiceried;
 
+import com.devpact.invoiceried.configuration.JfxWithSpringApplication;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
 
-import java.io.IOException;
-
-public class InvoiceriedApplication extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(InvoiceriedApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
+@SpringBootApplication
+@Configuration
+public class InvoiceriedApplication {
 
     public static void main(String[] args) {
-        launch();
+        Application.launch(JfxWithSpringApplication.class, args);
     }
 }

@@ -1,1 +1,3 @@
 rootProject.name = "invoiceried"
+include 'shared-kernel'
+
