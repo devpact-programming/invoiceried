@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'groovy'
     id 'application'
     id 'org.springframework.boot' version '2.7.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -21,6 +22,8 @@ ext {
     lombokVersion = '1.18.24'
     controlsfxVersion = '11.1.1'
     jacksonVersion = '2.13.3'
+    spockVersion = '2.1-groovy-3.0'
+    groovyVersion = '3.0.11'
 }
 
 tasks.withType(JavaCompile) {
@@ -49,8 +52,12 @@ dependencies {
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testImplementation("org.springframework.boot:spring-boot-starter-test",
+        "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+        "org.spockframework:spock-core:${spockVersion}",
+        "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    )
+
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
@@ -61,7 +68,7 @@ test {
 }
 
 jlink {
-    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+    imageZip.fileValue(project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip"))
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
     launcher {
         name = 'app'
