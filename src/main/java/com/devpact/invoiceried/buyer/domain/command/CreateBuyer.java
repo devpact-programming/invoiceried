@@ -1,9 +1,11 @@
-package com.devpact.invoiceried.buyer.model.command.create;
+package com.devpact.invoiceried.buyer.domain.command;
 
 import com.devpact.invoiceried.shared.cqrs.Command;
 import lombok.Builder;
+import lombok.Getter;
 
 @Builder
+@Getter
 public class CreateBuyer implements Command {
     private String companyName;
     private String street;
@@ -11,6 +13,6 @@ public class CreateBuyer implements Command {
     private String local;
     private String postalCode;
     private String city;
-    private String company;
+    private String country;
     private String vatNumber;
 }

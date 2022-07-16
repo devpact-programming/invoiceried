@@ -1,4 +1,7 @@
 package com.devpact.invoiceried.shared.cqrs;
 
-public interface AggregateRoot {
+import java.util.UUID;
+
+public abstract class AggregateRoot {
+    public abstract UUID getId();
 }
