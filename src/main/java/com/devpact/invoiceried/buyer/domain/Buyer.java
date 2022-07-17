@@ -15,4 +15,10 @@ public class Buyer extends AggregateRoot {
     private String companyName;
     private Address address;
     private VatNumber vatNumber;
+
+    public void update(String companyName, Address address, VatNumber vatNumber) {
+        this.companyName = companyName;
+        this.address = address;
+        this.vatNumber = vatNumber;
+    }
 }
