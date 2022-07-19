@@ -1,11 +1,13 @@
 package com.devpact.invoiceried.invoice.domain;
 
 import com.devpact.invoiceried.shared.vo.VatRate;
+import lombok.Value;
 
 import java.math.BigDecimal;
 
+@Value
 public class InvoiceProduct {
-    private String name;
-    private BigDecimal priceNetto;
-    private VatRate vatRate;
+    String name;
+    BigDecimal priceNetto;
+    VatRate vatRate;
 }

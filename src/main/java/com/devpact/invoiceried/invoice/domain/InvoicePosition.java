@@ -1,7 +1,10 @@
 package com.devpact.invoiceried.invoice.domain;
 
+import lombok.Builder;
+
+@Builder
 public class InvoicePosition {
-    private int positonNumber;
-    private InvoiceProduct product;
-    private int quantity;
+    int positonNumber;
+    InvoiceProduct product;
+    int quantity;
 }

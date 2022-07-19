@@ -1,7 +1,7 @@
 package com.devpact.invoiceried.configuration;
 
 import com.devpact.invoiceried.configuration.JfxWithSpringApplication.StageReadyEvent;
-import com.devpact.invoiceried.invoice.infrastructure.HelloController;
+import com.devpact.invoiceried.invoice.infrastructure.controller.HelloController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.devpact.invoiceried.invoice.infrastructure;
+package com.devpact.invoiceried.invoice.infrastructure.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
