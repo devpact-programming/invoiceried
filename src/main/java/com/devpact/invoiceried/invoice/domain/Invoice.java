@@ -12,8 +12,8 @@ public class Invoice extends AggregateRoot {
     @Getter
     private final UUID id;
     private InvoiceNumber invoiceNumber;
-    private InvoiceBuyer seller;
-    private InvoiceSeller buyer;
+    private InvoiceBuyer buyer;
+    private InvoiceSeller seller;
     private LocalDate invoiceDate;
     private LocalDate saleDate;
     private LocalDate paymentDeadline;
@@ -29,8 +29,8 @@ public class Invoice extends AggregateRoot {
 
     public void update(
             InvoiceNumber invoiceNumber,
-            InvoiceBuyer seller,
-            InvoiceSeller buyer,
+            InvoiceBuyer buyer,
+            InvoiceSeller seller,
             LocalDate invoiceDate,
             LocalDate saleDate,
             LocalDate paymentDeadline,
@@ -52,6 +52,6 @@ public class Invoice extends AggregateRoot {
     }
 
     void print() {
-
+        throw new UnsupportedOperationException();
     }
 }

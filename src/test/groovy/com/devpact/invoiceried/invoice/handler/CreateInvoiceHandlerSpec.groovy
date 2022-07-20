@@ -10,8 +10,10 @@ class CreateInvoiceHandlerSpec extends Specification {
 
     def "should return id for new invoice"() {
         given:
-            def command = CreateInvoice.builder().build()
-            def handler = new CreateInvoiceHandler(repository);
+            def command = CreateInvoice.builder()
+                    .invoiceNumber("2022/1")
+                    .build()
+            def handler = new CreateInvoiceHandler(repository)
         when:
             def result = handler.handle(command)
         then:
@@ -20,8 +22,10 @@ class CreateInvoiceHandlerSpec extends Specification {
 
     def "should save new invoice with success"() {
         given:
-            def command = CreateInvoice.builder().build()
-            def handler = new CreateInvoiceHandler(repository);
+            def command = CreateInvoice.builder()
+                    .invoiceNumber("2022/1")
+                    .build()
+            def handler = new CreateInvoiceHandler(repository)
         when:
             handler.handle(command)
         then:

@@ -5,13 +5,13 @@ import com.devpact.invoiceried.buyer.domain.command.UpdateBuyer;
 import com.devpact.invoiceried.shared.cqrs.CommandHandler;
 import com.devpact.invoiceried.shared.vo.Address;
 import com.devpact.invoiceried.shared.vo.VatNumber;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UpdateBuyerHandler implements CommandHandler<UpdateBuyer, BuyerResponse> {
     private final BuyerRepository repository;
 
