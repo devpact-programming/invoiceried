@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'groovy'
     id 'application'
-    id 'org.springframework.boot' version '2.7.1'
+    id 'org.springframework.boot' version '2.7.3'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
